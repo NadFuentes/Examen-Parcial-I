@@ -14,7 +14,7 @@ public abstract class Pieza {
 
     public abstract boolean esMovimientoValido(int nuevaFila, int nuevaColumna, Pieza[][] piezas);
 
-    public void mover(int nuevaFila, int nuevaColumna) {
+    public final void mover(int nuevaFila, int nuevaColumna) {
         this.fila = nuevaFila;
         this.columna = nuevaColumna;
     }
@@ -28,7 +28,7 @@ public abstract class Pieza {
     }
 }
 
-public class Soldado extends Pieza {
+class Soldado extends Pieza {
     public Soldado(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }
@@ -47,8 +47,7 @@ public class Soldado extends Pieza {
                (nuevaFila == fila && Math.abs(nuevaColumna - columna) == 1);
     }
 }
-
-public class General extends Pieza {
+class General extends Pieza {
     public General(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }
@@ -69,7 +68,7 @@ public class General extends Pieza {
     }
 }
 
-public class Oficial extends Pieza {
+class Oficial extends Pieza {
     public Oficial(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }
@@ -88,7 +87,7 @@ public class Oficial extends Pieza {
     }
 }
 
-public class Elefante extends Pieza {
+class Elefante extends Pieza {
     public Elefante(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }
@@ -111,7 +110,7 @@ public class Elefante extends Pieza {
     }
 }
 
-public class Carro extends Pieza {
+class Carro extends Pieza {
     public Carro(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }
@@ -137,7 +136,7 @@ public class Carro extends Pieza {
     }
 }
 
-public class Caballo extends Pieza {
+class Caballo extends Pieza {
     public Caballo(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }
@@ -161,7 +160,7 @@ public class Caballo extends Pieza {
     }
 }
 
-public class Canon extends Pieza {
+ class Canon extends Pieza {
     public Canon(int fila, int columna, boolean esRojo) {
         super(fila, columna, esRojo);
     }

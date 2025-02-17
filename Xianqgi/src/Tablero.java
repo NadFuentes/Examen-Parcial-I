@@ -2,8 +2,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Tablero extends JFrame {
-    private JButton[][] botones = new JButton[10][9];
+public class Tablero extends javax.swing.JFrame {
+    private javax.swing.JButton[][] botones = new javax.swing.JButton[10][9];
     private Pieza[][] piezas = new Pieza[10][9];
     private int filaSeleccionada = -1;
     private int columnaSeleccionada = -1;
@@ -161,6 +161,18 @@ public class Tablero extends JFrame {
     piezas[2][1] = new Canon(2, 1, true); piezas[2][7] = new Canon(2, 7, true);
     piezas[7][1] = new Canon(7, 1, false); piezas[7][7] = new Canon(7, 7, false);
 }
+   
+     private void actualizarTablero() {
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 9; j++) {
+                if (piezas[i][j] != null) {
+                    botones[i][j].setText(piezas[i][j].getClass().getSimpleName());
+                } else {
+                    botones[i][j].setText("");
+                }
+            }
+        }
+    }
 
     private void manejarClic(int fila, int columna) {
     if (filaSeleccionada == -1 && columnaSeleccionada == -1) {
@@ -289,7 +301,7 @@ private void actualizarBotones(int filaInicial, int columnaInicial, int filaFina
         btn96 = new javax.swing.JButton();
         btn97 = new javax.swing.JButton();
         btn98 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        panelTablero = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -808,7 +820,7 @@ private void actualizarBotones(int filaInicial, int columnaInicial, int filaFina
         btn98.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btn98.setPreferredSize(new java.awt.Dimension(50, 50));
         getContentPane().add(btn98, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 450, -1, -1));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 500));
+        getContentPane().add(panelTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 500));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -951,6 +963,6 @@ private void actualizarBotones(int filaInicial, int columnaInicial, int filaFina
     public static javax.swing.JButton btn96;
     public static javax.swing.JButton btn97;
     public static javax.swing.JButton btn98;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel panelTablero;
     // End of variables declaration//GEN-END:variables
 }
