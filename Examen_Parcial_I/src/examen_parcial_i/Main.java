@@ -13,16 +13,16 @@ import java.awt.event.ActionListener;
  */
 public class Main{
     public static void main(String[] args) {
-        // Crear la instancia de UberSocial
+        
         UberSocial uberSocial = new UberSocial();
         
-             // Crear la ventana principal
+             
         JFrame frame = new JFrame("UberSocial GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(600, 400);
         frame.setLayout(new BorderLayout());
         
-            // Panel para agregar cuentas
+            
         JPanel accountPanel = new JPanel();
         accountPanel.setLayout(new GridLayout(3, 2));
         
@@ -40,12 +40,12 @@ public class Main{
 
         frame.add(accountPanel, BorderLayout.NORTH);
 
-        // Área de texto para mostrar perfiles y timelines
+       
         JTextArea displayArea = new JTextArea();
         displayArea.setEditable(false);
         frame.add(new JScrollPane(displayArea), BorderLayout.CENTER);
 
-        // Panel para agregar amigos, posts y comentarios
+        
         JPanel actionPanel = new JPanel();
         actionPanel.setLayout(new GridLayout(4, 2));
 
@@ -70,7 +70,7 @@ public class Main{
 
         frame.add(actionPanel, BorderLayout.SOUTH);
 
-        // Acciones de los botones
+       
         addFacebookButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
