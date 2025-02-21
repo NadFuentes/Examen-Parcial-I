@@ -36,10 +36,5 @@ public class Comment {
         System.out.println(autor+" - "+""+dia+" "+mes+" "+año+"\n"+comentario);
     }
 
-    public interface Commentable {
-    boolean addComment(Comment comment);
-}
-    
-
 
 }
