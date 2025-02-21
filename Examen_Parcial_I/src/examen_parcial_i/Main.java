@@ -75,7 +75,7 @@ public class Main{
             @Override
             public void actionPerformed(ActionEvent e) {
                 String user = facebookUserField.getText();
-                FacebookAccount facebookAccount = new FacebookAccount(user);
+                FaceBookAccount facebookAccount = new FaceBookAccount(user);
                 uberSocial.addAccount(facebookAccount);
                 displayArea.append("Cuenta de Facebook agregada: " + user + "\n");
             }

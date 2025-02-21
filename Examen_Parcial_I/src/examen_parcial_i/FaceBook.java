@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class FaceBook extends SocialClass implements Comentable {
     private ArrayList<Comment> comment;
     
-    public Facebook(String username){
+    public FaceBook(String username){
         super(username);
         comment = new ArrayList<>();
     }
